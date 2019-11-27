@@ -1,0 +1,10 @@
+name: "Tianhui(Alamby)"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About Me"
+      href: About.html
+output:
+  html_document:
+    theme: journal
