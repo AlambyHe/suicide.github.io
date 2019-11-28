@@ -1,8 +1,11 @@
 ---
-title: "Suicide"
+title: "Why People Suicide"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  html_document
 ---
-# Sucide Project
+
+![](./suicide_speak_reach.jpg)
+
+Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies.
+
+Suicides are preventable. Much can be done to prevent suicide at individual, community and national levels. 
