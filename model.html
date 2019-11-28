@@ -405,13 +405,8 @@ div.tocify {
 </div>
 
 
-<p>Suicide rate chages with year</p>
 <p>Happiness score are related to ?</p>
 <pre class="r"><code>## clean the data
-data &lt;- read_csv(&quot;./data/master.csv&quot;) %&gt;% 
-  janitor::clean_names()
-survey &lt;- read_csv(&quot;./data/survey.csv&quot;) %&gt;% 
-  janitor::clean_names()
 happiness_2015 &lt;- read_csv(&quot;./data/2015.csv&quot;) %&gt;% 
   janitor::clean_names() %&gt;% 
   mutate(
@@ -448,11 +443,11 @@ Cor.data_2016 &lt;- cor(happiness_2016_cor[, Num.cols_2016])
 Cor.data_2017 &lt;- cor(happiness_2017_cor[, Num.cols_2017])
 
 corrplot(Cor.data_2015, method = &#39;square&#39;, addCoef.col = &quot;black&quot;, tl.col =&quot;black&quot;, tl.srt=45, diag = FALSE, number.cex = .7, title = &quot;correlation between happiness and other variables in 2015&quot;) </code></pre>
-<p><img src="model_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="model_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>corrplot(Cor.data_2016, method = &#39;square&#39;, addCoef.col = &quot;black&quot;, tl.col =&quot;black&quot;, tl.srt=45, diag = FALSE, number.cex = .7, title = &quot;correlation between happiness and other variables in 2016&quot;)  </code></pre>
-<p><img src="model_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p><img src="model_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
 <pre class="r"><code>corrplot(Cor.data_2017, method = &#39;square&#39;, addCoef.col = &quot;black&quot;, tl.col =&quot;black&quot;, tl.srt=45, diag = FALSE, number.cex = .7, title = &quot;correlation between happiness and other variables in 2017&quot;)  </code></pre>
-<p><img src="model_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p><img src="model_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
 
 
 
