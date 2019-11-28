@@ -4,7 +4,7 @@ output:
   html_document
 ---
 
-![](./suicide_speak_reach.jpg)
+![](https://gifimage.net/wp-content/uploads/2017/11/funny-suicide-gif-8.gif)
 
 Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies.
 
