@@ -7,7 +7,7 @@ navbar:
       href: overview.html
     - text: "About"
       href: About.html
-    - text: "Analysis""
+    - text: "Analysis"
       menu:
       - text: "model"
         href: model.html
