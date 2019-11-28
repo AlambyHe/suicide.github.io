@@ -5,10 +5,16 @@ navbar:
    right:
     - text: "overview"
       href: overview.html
-    - text: Analysis
+    - text: "About"
+      href: About.html
+    - text: "Analysis"
       menu:
       - text: "model"
         href: model.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<jm4998@cumc.columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/AlambyHe/
 output:
   html_document:
     theme: journal
