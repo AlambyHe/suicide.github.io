@@ -94,7 +94,7 @@ The relationship between suicide rate and gdp_per_capita
 ggplot(country_year, aes(x = gdp_per_capita, y = suicide_per_100k, col = continent)) +
   geom_point() + 
   geom_smooth(method = "lm") +
-  scale_x_continuous(labels=scales::dollar_format(prefix="$"), breaks = seq(0, 125000, 10000)) +
+  scale_x_continuous(labels=scales::dollar_format(prefix="$"), breaks = seq(0, 125000, 20000)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_grid(~continent)
 ```

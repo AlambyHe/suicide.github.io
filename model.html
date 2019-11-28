@@ -441,7 +441,7 @@ ggplot(country_year_sig_trends, aes(x=country, y=estimate, col = estimate)) +
 <pre class="r"><code>ggplot(country_year, aes(x = gdp_per_capita, y = suicide_per_100k, col = continent)) +
   geom_point() + 
   geom_smooth(method = &quot;lm&quot;) +
-  scale_x_continuous(labels=scales::dollar_format(prefix=&quot;$&quot;), breaks = seq(0, 125000, 10000)) +
+  scale_x_continuous(labels=scales::dollar_format(prefix=&quot;$&quot;), breaks = seq(0, 125000, 20000)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_grid(~continent)</code></pre>
 <p><img src="model_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
