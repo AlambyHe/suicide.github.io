@@ -1,0 +1,75 @@
+---
+title: "Selftest"
+output: html_document
+---
+
+<p>Have you ever suffered from any mental illness?</p>
+  <input type="radio" name="ill" value="1"> Yes<br>
+  <input type="radio" name="ill" value="0"> No<br>
+
+<p>Have you ever thought about or attempted to kill yourself?</p>
+  <input type="radio" name="self" value="1"> Yes<br>
+  <input type="radio" name="self" value="0"> No<br>
+  
+<p>Other factors: Do you expect that you will fail to pass Data Science?</p>
+  <input type="radio" name="ds" value="1"> Yes<br>
+  <input type="radio" name="ds" value="0"> No<br>
+  
+<input type="submit" value="Submit"><br>
+
+<span class="pass">
+![](https://media.giphy.com/media/hrpy8ahRGOurYqkAof/giphy.gif)
+</span>
+
+<span class="sad">
+![](https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif)
+</span>
+
+<span class="risky">
+![](https://media.giphy.com/media/3og0IIq3vROObq27WE/giphy.gif)
+</span>
+
+<span class="sorry">
+![](https://media.giphy.com/media/xUySTQrznWtO9pWxVe/giphy.gif)
+</span>
+
+<span class="suicide">
+![](https://media.giphy.com/media/ySMINwPzf50IM/giphy.gif)
+</span>
+
+
+```{js, echo=FALSE}
+function allHide() {
+  $(".pass").hide();
+  $(".sad").hide();
+  $(".risky").hide();
+  $(".sorry").hide();
+  $(".suicide").hide();
+}
+allHide();
+$("input[type='submit']").click(function(){
+  var ill = parseInt($("input[name='ill']:checked").val());
+  var self = parseInt($("input[name='self']:checked").val());
+  var ds = parseInt($("input[name='ds']:checked").val());
+  var total = ill + self + ds;
+  if(total==3){
+    allHide();
+    $(".suicide").show();
+  }else if(total==0){
+    allHide();
+    $(".pass").show();
+  }else if(total==2){
+    allHide();
+    $(".sorry").show();
+  }else{
+    if(ds==1){
+      allHide();
+      $(".sad").show();
+    }else{
+      allHide();
+      $(".risky").show();
+    }
+  }
+  
+});
+```

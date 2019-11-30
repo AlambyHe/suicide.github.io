@@ -12,7 +12,7 @@
 
 
 
-<title>About</title>
+<title>Selftest</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,9 +20,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -253,63 +250,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -317,16 +257,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -388,41 +318,67 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">About</h1>
+<h1 class="title toc-ignore">Selftest</h1>
 
 </div>
 
 
-<p><img src="do-not-give-up.jpg" /></p>
-<div id="motivation" class="section level2">
-<h2>Motivation</h2>
-<p>Suicide has been of increasing concern all over the world. Nowadays, close to 800,000 people die by suicide every year. Furthermore, for each suicide, there are more than 20 suicide attempts. Our objective is to develop an online resource to plot and analyze global suiside rate and build models to explore the causes of suicide. The target audience for this webpage is all who is interesed in the causes of suicide and want to prevent himself/herself or people around from suicide. The goal of this resource is to raise awareness on the widespread impact of suicides, and inform public that suicides are preventable.</p>
-</div>
-<div id="methods" class="section level2">
-<h2>Methods</h2>
-<p>Using Flexdashboard to create maps and plots of global suicide rate from 1979 to 2016, and separate analysis of suicide rate across years, gender and age.</p>
-<p>Using regression models and correlation analysis to explore the association between suicides and gdp, happiness and other covirates.</p>
-<p>Using our analysis results and other website links to help people know more about suicides and prevent suicides.</p>
-</div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>WHO Suicide Statistics</p>
-<p>*Basic historical (1979-2016) data by country, year and demographic groups.</p>
-<p>*6 variables in total, focused on plotting and analyzing global suiside rate.</p>
-<p>*Can be found <a href="https://www.kaggle.com/szamil/who-suicide-statistics">here</a></p>
-<p>World Happiness Report</p>
-<p>*Happiness scored from 2015 to 2017 according to economic production, social support, etc.</p>
-<p>*12 variables in total, focused on model building to explore the causes of suicide.</p>
-<p>*Can be found <a href="https://www.kaggle.com/unsdsn/world-happiness">here</a></p>
-</div>
-<div id="screencast" class="section level2">
-<h2>Screencast</h2>
-</div>
+<p>
+Have you ever suffered from any mental illness?
+</p>
+<p><input type="radio" name="ill" value="1"> Yes<br> <input type="radio" name="ill" value="0"> No<br></p>
+<p>
+Have you ever thought about or attempted to kill yourself?
+</p>
+<p><input type="radio" name="self" value="1"> Yes<br> <input type="radio" name="self" value="0"> No<br></p>
+<p>
+Other factors: Do you expect that you will fail to pass Data Science?
+</p>
+<p><input type="radio" name="ds" value="1"> Yes<br> <input type="radio" name="ds" value="0"> No<br></p>
+<p><input type="submit" value="Submit"><br></p>
+<p><span class="pass"> <img src="https://media.giphy.com/media/hrpy8ahRGOurYqkAof/giphy.gif" /> </span></p>
+<p><span class="sad"> <img src="https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif" /> </span></p>
+<p><span class="risky"> <img src="https://media.giphy.com/media/3og0IIq3vROObq27WE/giphy.gif" /> </span></p>
+<p><span class="sorry"> <img src="https://media.giphy.com/media/xUySTQrznWtO9pWxVe/giphy.gif" /> </span></p>
+<p><span class="suicide"> <img src="https://media.giphy.com/media/ySMINwPzf50IM/giphy.gif" /> </span></p>
+<script type="text/javascript">
+function allHide() {
+  $(".pass").hide();
+  $(".sad").hide();
+  $(".risky").hide();
+  $(".sorry").hide();
+  $(".suicide").hide();
+}
+allHide();
+$("input[type='submit']").click(function(){
+  var ill = parseInt($("input[name='ill']:checked").val());
+  var self = parseInt($("input[name='self']:checked").val());
+  var ds = parseInt($("input[name='ds']:checked").val());
+  var total = ill + self + ds;
+  if(total==3){
+    allHide();
+    $(".suicide").show();
+  }else if(total==0){
+    allHide();
+    $(".pass").show();
+  }else if(total==2){
+    allHide();
+    $(".sorry").show();
+  }else{
+    if(ds==1){
+      allHide();
+      $(".sad").show();
+    }else{
+      allHide();
+      $(".risky").show();
+    }
+  }
+  
+});
+</script>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -455,32 +411,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
