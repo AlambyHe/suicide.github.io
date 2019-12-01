@@ -34,7 +34,7 @@ library(plotly)
 library(mgcv)
 ```
 
-## Suicide rate chages with year within every country
+## Suicide rate chages with year
 
 ```{r, message=FALSE, warning=FALSE}
 ## read data
@@ -144,14 +144,13 @@ ggplotly(p1) %>%
 
 We can get a conclusion that nearly a half of all countries have suicide rates that are changing linearly as time progresses. Between those countries that have suicide rate changing linearly as time progresses, there are 32 (2/3) countries have a decreasing trend. Overall, the suicide rate decreases as time progresses.
 
-## Relationship with GDP per capital and suicide rate.
+## Relationship between economy and suicide
 
 ```{r,warning=FALSE, message=FALSE}
 country_gdp = country_year %>% 
   ungroup(continent)
-p2 = ggplot(country_gdp, aes(x = gdp_per_capita, y = suicide_per_100k)) + 
-  geom_point(size = 1, color = "lightblue") + 
-  geom_smooth(method = "lm") +
+p2 = ggplot(country_gdp, aes(x = gdp_per_capita, y = suicide_per_100k, color = continent)) + 
+  geom_point(size = 1) + 
   scale_x_continuous(labels=scales::dollar_format(prefix="$"), breaks = seq(0, 130000, 10000)) + 
   labs(title = "Correlation between GDP and Suicides rate", 
        x = "log(GDP (per capital)*0.001)", 
@@ -161,19 +160,36 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggplotly(p2)
 ```
 
-
-
-## Relationship with GDP per capital and suicide rate.
+Because these data may have some influential points, so I will drop data with Cooks Distance larger than 4/n and then analysethe relationship between GDP per capital and suicide rate.
 
 ```{r}
+model1 <- lm(suicide_per_100k ~ gdp_per_capita, data = country_gdp)
+
+gdp_suicide_no_outliers <- model1 %>%
+  augment() %>%
+  arrange(desc(.cooksd)) %>%
+  filter(.cooksd < 4/nrow(.)) %>% # removes 5/93 countries
+  inner_join(country_gdp, by = c("suicide_per_100k", "gdp_per_capita")) %>%
+  select(country, continent, gdp_per_capita, suicide_per_100k)
+
+model2 <- lm(suicide_per_100k ~ gdp_per_capita, data = gdp_suicide_no_outliers)
+
+summary(model2) %>% 
+  tidy() 
+```
+
+The p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capital has association with its suicide rate.
+
+## Relationship between HDI and suicide
+
+```{r,message=FALSE, warning=FALSE}
 country_gdp_no_hdi = country_year %>% 
   drop_na() %>% 
   mutate(
     hdi_for_year = mean(hdi_for_year)
   )
-p3 = ggplot(country_gdp_no_hdi, aes(x = hdi_for_year, y = suicide_per_100k)) + 
-  geom_point(size = 1, color = "lightblue") + 
-  geom_smooth(method = "lm") +
+p3 = ggplot(country_gdp_no_hdi, aes(x = hdi_for_year, y = suicide_per_100k, color = continent)) + 
+  geom_point(size = 1) + 
   scale_x_continuous(labels=scales::dollar_format(prefix="$"), breaks = seq(0, 130000, 10000)) + 
   labs(title = "Correlation between HDI and Suicides rate", 
        x = "HDI", 
@@ -184,7 +200,27 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggplotly(p3)
 ```
 
-Happiness score are related to ?
+As mentioned above, I will drop data with Cooks Distance larger than 4/n and then analysethe relationship between HDI and suicide rate.
+
+```{r}
+model3 <- lm(suicide_per_100k ~ hdi_for_year, data = country_gdp_no_hdi)
+
+hdi_suicide_no_outliers <- model3 %>%
+  augment() %>%
+  arrange(desc(.cooksd)) %>%
+  filter(.cooksd < 4/nrow(.)) %>% # removes 5/93 countries
+  inner_join(country_gdp_no_hdi, by = c("suicide_per_100k", "hdi_for_year")) %>%
+  select(country, continent, hdi_for_year, suicide_per_100k)
+
+model4 <- lm(suicide_per_100k ~ hdi_for_year, data = hdi_suicide_no_outliers)
+
+summary(model4) %>% 
+  tidy() 
+```
+
+The p-value is smaller than 0.05, so we can say that at 0.05 significance level, hdi has association with its suicide rate.
+
+## Correlation between variables
 
 ```{r, message=FALSE, warning=FALSE}
 ## clean the data
@@ -235,7 +271,7 @@ happiness = rbind(happiness_2015, happiness_2016, happiness_2017)
 
 ```
 
-```{r}
+```{r,message=FALSE, warning=FALSE}
 overall_data = merge(happiness, suicide, by = c("country", "year")) %>% 
   group_by(country, year, continent) %>%
   dplyr::summarize(suicides = sum(suicides_no), 
@@ -251,11 +287,63 @@ overall_data = merge(happiness, suicide, by = c("country", "year")) %>%
             residual = mean(residual)
             )
 
-Num.cols <- sapply(overall_data, is.numeric)
-Cor.data <- cor(overall_data[, Num.cols])
-corrplot(Cor.data, method = 'square', addCoef.col = "black", tl.col ="black", tl.srt = 45, diag = FALSE, number.cex = .7) 
+asia_overall = overall_data %>% 
+  filter(continent == "Asia") 
+
+europe_overall = overall_data %>% 
+  filter(continent == "Europe") 
 ```
 
+### correlation between suicide rate and other variavles in all countries
 
+```{r,message=FALSE, warning=FALSE}
+Num.cols <- sapply(overall_data, is.numeric)
+Cor.data <- cor(overall_data[, Num.cols])
+corrplot(Cor.data, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7) 
+```
+
+Countries in different continent may have different outcomes, which leading to the uncorrelation between suicide rate with other varaibles. So next let us start continent_degree analyses.
+
+```{r}
+overall_data %>% 
+  group_by(continent) %>% 
+  summarise(n = n()) %>% 
+  knitr::kable(align = 'c', format = "html")
+```
+
+Because there are few data about Africa and Oceania, so we only need to analyse three continents - Americas, Asia and Europe.
+
+### correlation between suicide rate and other variavles in Asia
+
+```{r,message=FALSE, warning=FALSE}
+Num.cols_asia <- sapply(asia_overall, is.numeric)
+Cor.data_asia <- cor(asia_overall[, Num.cols_asia])
+corrplot(Cor.data_asia, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7)
+```
+
+Suicide rate in Asia has a slightly positive correlation with degree of satisfiction with family, freedom, but has a slightly negtive correlation with trust of government and gdp per capital.
+
+### correlation between suicide rate and other variavles in Europe
+
+```{r}
+Num.cols_europe <- sapply(europe_overall, is.numeric)
+Cor.data_europe <- cor(europe_overall[, Num.cols_europe])
+corrplot(Cor.data_europe, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7)
+```
+
+Suicide rate in Europe has a negative correlation with gdp per capital, happiness score, degree of satisfiction with family, freedom, trust of government and generasity, which means that if a country in Europe is more prosperous and has a relatively higher happiness score, it is more likely to have a lower suicide rate.
+
+### correlation between suicide rate and other variavles in Americas
+
+```{r,message=FALSE, warning=FALSE}
+americas_overall = overall_data %>% 
+  filter(continent == "Americas") 
+Num.cols_america <- sapply(americas_overall, is.numeric)
+Cor.data_america <- cor(americas_overall[, Num.cols_america])
+corrplot(Cor.data_america, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7)
+
+```
+
+Suicide rate in America has a positive correlation with gdp per capital, happiness score, degree of satisfiction with family, freedom, trust of government and generasity, which means that if a country in Americas is more prosperous and has a relatively higher happiness score, it is more likely to have a higher suicide rate.
 
 
