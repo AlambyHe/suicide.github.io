@@ -160,7 +160,7 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggplotly(p2)
 ```
 
-Because these data may have some influential points, so I will drop data with Cooks Distance larger than 4/n and then analysethe relationship between GDP per capital and suicide rate.
+Because these data may have some influential points, so it's better to drop data with Cooks Distance larger than 4/n and then analyse the relationship between GDP per capital and suicide rate.
 
 ```{r}
 model1 <- lm(suicide_per_100k ~ gdp_per_capita, data = country_gdp)
@@ -178,7 +178,7 @@ summary(model2) %>%
   tidy() 
 ```
 
-The p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capital has association with its suicide rate.
+After drop influential points, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capital has association with its suicide rate.
 
 ## Relationship between HDI and suicide
 
@@ -200,7 +200,7 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggplotly(p3)
 ```
 
-As mentioned above, I will drop data with Cooks Distance larger than 4/n and then analysethe relationship between HDI and suicide rate.
+As mentioned above, first step is to drop data with Cooks Distance larger than 4/n and then analyse the relationship between HDI and suicide rate.
 
 ```{r}
 model3 <- lm(suicide_per_100k ~ hdi_for_year, data = country_gdp_no_hdi)
@@ -218,7 +218,7 @@ summary(model4) %>%
   tidy() 
 ```
 
-The p-value is smaller than 0.05, so we can say that at 0.05 significance level, hdi has association with its suicide rate.
+After drop the influential point, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, HDI has association with its suicide rate.
 
 ## Correlation between variables
 
@@ -294,7 +294,7 @@ europe_overall = overall_data %>%
   filter(continent == "Europe") 
 ```
 
-### correlation between suicide rate and other variavles in all countries
+**correlation between suicide rate and other variavles in all countries**
 
 ```{r,message=FALSE, warning=FALSE}
 Num.cols <- sapply(overall_data, is.numeric)
@@ -302,18 +302,21 @@ Cor.data <- cor(overall_data[, Num.cols])
 corrplot(Cor.data, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7) 
 ```
 
-Countries in different continent may have different outcomes, which leading to the uncorrelation between suicide rate with other varaibles. So next let us start continent_degree analyses.
+Countries in different continent may have different outcomes, which leading to the uncorrelation between suicide rate with other varaibles. So it's more accurate to analyse these data in continent level.
 
 ```{r}
 overall_data %>% 
   group_by(continent) %>% 
-  summarise(n = n())
+  summarise(n = n()) %>% 
+  knitr::kable(format = "html", align = 'c')
+
 ```
 
 
-Because there are few data about Africa and Oceania, so we only need to analyse three continents - Americas, Asia and Europe.
 
-### correlation between suicide rate and other variavles in Asia
+Because there are few data about Africa and Oceania, so only need to analyse three continents - Americas, Asia and Europe.
+
+**correlation between suicide rate and other variavles in Asia**
 
 ```{r,message=FALSE, warning=FALSE}
 Num.cols_asia <- sapply(asia_overall, is.numeric)
@@ -323,7 +326,7 @@ corrplot(Cor.data_asia, method = 'square', addCoef.col = "black", tl.col = "blac
 
 Suicide rate in Asia has a slightly positive correlation with degree of satisfiction with family, freedom, but has a slightly negtive correlation with trust of government and gdp per capital.
 
-### correlation between suicide rate and other variavles in Europe
+**correlation between suicide rate and other variavles in Europe**
 
 ```{r}
 Num.cols_europe <- sapply(europe_overall, is.numeric)
@@ -333,7 +336,7 @@ corrplot(Cor.data_europe, method = 'square', addCoef.col = "black", tl.col = "bl
 
 Suicide rate in Europe has a negative correlation with gdp per capital, happiness score, degree of satisfiction with family, freedom, trust of government and generasity, which means that if a country in Europe is more prosperous and has a relatively higher happiness score, it is more likely to have a lower suicide rate.
 
-### correlation between suicide rate and other variavles in Americas
+**correlation between suicide rate and other variavles in Americas**
 
 ```{r,message=FALSE, warning=FALSE}
 americas_overall = overall_data %>% 
