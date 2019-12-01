@@ -77,7 +77,7 @@ country_year_sig_trends$country <- factor(country_year_sig_trends$country,
                                           levels = country_year_sig_trends$country)
 ```
 
-Here are some plots about simple linear regression of suicide rate (suicide per 100k) with year in countries with significant trends (p < 0.05).
+Here are some plots about simple linear regression of suicide rate (suicide per 100k) and year in countries with significant trends (p < 0.05).
 
 ```{r}
 top12_increasing <- tail(country_year_sig_trends$country, 12)
@@ -95,9 +95,9 @@ country_year %>%
        y = "Suicides per 100k")
 ```
 
-From the plots above we can see that South Korea shows the most significant increasing trend - an increase in suicide per 100k of 0.931 people with every unit increase in year, which is similar to Guyana - an increase in suicide per 100k of 0.925 people with every unit increase in year.
+From the plots above we can see that South Korea shows the most significant increasing trend - an increase in suicide per 100 k of 0.931 people with every unit increase in year, which is similar to Guyana - an increase in suicide per 100k of 0.925 people with every unit increase in year.
 
-Guyana’s suicide rate increased by 365% between 1998 and 1999 (5.3 to 24.8) which seems questionable - maybe it's because they changed classification method of defining suicide.)
+Guyana’s suicide rate increased by 365% between 1998 and 1999 (5.3 to 24.8) which seems questionable - maybe it's because they changed classification method of defining suicide.
 
 ```{r}
 
@@ -116,13 +116,13 @@ country_year %>%
        y = "Suicides per 100k")
 ```
 
-Estonia shows the most significant decreasing trend - an decrease in suicide per 100k of 1.31 people with every unit increase in year.
+Estonia shows the most significant decreasing trend - an decrease in suicide per 100 k of 1.31 people with every unit increase in year.
 
-The following plot is about suicide rate (Suicides per 100k) change per year of countries with significant trends (p < 0.05).
+The following plot is about suicide rate (Suicides per 100 k) change per year of countries with significant trends (p < 0.05).
 
 ```{r}
 p1 = ggplot(country_year_sig_trends, aes(x = country, y = estimate, col = estimate)) + 
-  geom_point(stat = 'identity', size = 4) +
+  geom_point(stat = 'identity', size = 2) +
   geom_hline(yintercept = 0, col = "grey", size = 1) +
   scale_color_gradient(low = "green", high = "red") +
   geom_segment(aes(y = 0, 
@@ -307,9 +307,9 @@ Countries in different continent may have different outcomes, which leading to t
 ```{r}
 overall_data %>% 
   group_by(continent) %>% 
-  summarise(n = n()) %>% 
-  knitr::kable(align = 'c', format = "html")
+  summarise(n = n())
 ```
+
 
 Because there are few data about Africa and Oceania, so we only need to analyse three continents - Americas, Asia and Europe.
 
