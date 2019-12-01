@@ -3,16 +3,18 @@ output_dir: "."
 navbar:
    title: "Home"
    right:
-    - text: "Overview"
-      href: index.html
     - text: "About"
       href: About.html
+    - text: "Overview"
+      href: Overview.html      
     - text: "Selftest"
       href: selftest.html
     - text: "Analysis"
       menu:
       - text: "model"
         href: model.html
+    - text: "Conclusion"
+      href: Conclusion.html
     - icon: fa-envelope fa-lg
       href: mailto:<jm4998@cumc.columbia.edu>
     - icon: fa-github fa-lg
