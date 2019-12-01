@@ -229,40 +229,19 @@ happiness_2015 <- read_csv("./data/2015.csv") %>%
   mutate(
     year = 2015
   ) %>% 
-  select(-region, -standard_error) %>% 
-  rename(hap_rank = happiness_rank,
-         hap_score = happiness_score,
-         gdp_capita = economy_gdp_per_capita,
-         life_expec = health_life_expectancy,
-         trust = trust_government_corruption,
-         residual = dystopia_residual
-         )
+  select(-region, -standard_error)
 happiness_2016 <- read_csv("./data/2016.csv") %>% 
   janitor::clean_names() %>% 
   mutate(
     year = 2016
   ) %>% 
-  select(-region, -lower_confidence_interval, -upper_confidence_interval) %>% 
-  rename(hap_rank = happiness_rank,
-         hap_score = happiness_score,
-         gdp_capita = economy_gdp_per_capita,
-         life_expec = health_life_expectancy,
-         trust = trust_government_corruption,
-         residual = dystopia_residual
-         )
+  select(-region, -lower_confidence_interval, -upper_confidence_interval)
 happiness_2017 <- read_csv("./data/2017.csv") %>% 
   janitor::clean_names() %>% 
   mutate(
     year = 2017
   ) %>% 
-  select(-whisker_high, -whisker_low) %>% 
-  rename(hap_rank = happiness_rank,
-         hap_score = happiness_score,
-         gdp_capita = economy_gdp_per_capita,
-         life_expec = health_life_expectancy,
-         trust = trust_government_corruption,
-         residual = dystopia_residual
-         )
+  select(-whisker_high, -whisker_low) 
 
 happiness_2015 = happiness_2015[, c(1,11,2,3,4,5,6,7,8,9,10)]
 happiness_2016 = happiness_2016[, c(1,11,2,3,4,5,6,7,8,9,10)]
@@ -278,13 +257,13 @@ overall_data = merge(happiness, suicide, by = c("country", "year")) %>%
             population = sum(population), 
             suicide_per_100k = (suicides / population) * 100000, 
             gdp_capita = mean(gdp_per_capita),
-            hap_score = mean(hap_score),
+            hap_score = mean(happiness_score),
             family =  mean(family),
-            life_expec = mean(life_expec),
+            life_expec = mean(health_life_expectancy),
             freedom = mean(freedom),
-            trust = mean(trust),
+            trust = mean(trust_government_corruption),
             generosity = mean(generosity),
-            residual = mean(residual)
+            residual = mean(dystopia_residual)
             )
 
 asia_overall = overall_data %>% 

@@ -18,7 +18,7 @@ library(plotly)
 
 ```{r include=FALSE}
 # read in data
-data = read.csv('./data/master.csv') %>%
+data = read_csv('./data/master.csv') %>%
   janitor::clean_names() %>%
   filter(year == 2010,
          country != 'Dominica',
