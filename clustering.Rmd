@@ -1,0 +1,66 @@
+---
+title: "clustering"
+author: "Shenglin Liu"
+date: "12/1/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(glmnet)
+library(plotly)
+```
+
+
+```{r include=FALSE}
+# read in data
+data = read.csv('./data/master.csv') %>%
+  janitor::clean_names() %>%
+  filter(year == 2010,
+         country != 'Dominica',
+         country != 'Saint Kitts and Nevis')
+data = data[complete.cases(data), ]
+         
+# fix the names of some of the countries in our data to match the country names used by our map later on so that they'll be interpreted and displayed 
+data = data %>%
+  mutate(country = fct_recode(country, "The Bahamas" = "Bahamas"),
+         country = fct_recode(country, "Cape Verde" = "Cabo Verde"),
+         country = fct_recode(country, "South Korea" = "Republic of Korea"),
+         country = fct_recode(country, "Russia" = "Russian Federation"),
+         country = fct_recode(country, "Republic of Serbia" = "Serbia"),
+         country = fct_recode(country, "United States of America" = "United States"))
+
+# reorder levels of age to be in chronological order 
+data$age = factor(data$age, levels = c("5-14 years", "15-24 years", "25-34 years", "35-54 years", "55-74 years", "75+ years"))
+```
+
+```{r}
+# create tibble for overall suicides by country
+country_bar = data %>%
+  select(country, suicides_100k_pop, gdp_per_capita) %>%
+  group_by(country, gdp_per_capita) %>%
+  summarise(suicide_capita = mean(suicides_100k_pop)) %>%
+  ungroup()
+
+# normalization
+country_norm = as.data.frame(apply(country_bar[, 2:3], 2, function(x) (x - min(x))/(max(x)-min(x))))
+
+# clustering by 3 groups
+kmeans_fit =
+  kmeans(x = country_norm, centers = 3)
+
+country_norm =
+  broom::augment(kmeans_fit, country_norm)
+
+country_norm$country = country_bar$country
+
+g = country_norm %>% 
+  ggplot(aes(x = suicide_capita, y = gdp_per_capita, color = .cluster,  text = paste(country))) +
+  geom_point()
+
+ggplotly(g, tooltip = "text")
+```
