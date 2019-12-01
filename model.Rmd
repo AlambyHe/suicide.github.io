@@ -155,12 +155,15 @@ p2 = ggplot(country_gdp, aes(x = gdp_per_capita, y = suicide_per_100k, color = c
   labs(title = "Correlation between GDP and Suicides rate", 
        x = "log(GDP (per capital)*0.001)", 
        y = "Suicides per 100k") +
-theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  facet_grid(~continent) +
+  geom_smooth(method = "lm")
 
 ggplotly(p2)
 ```
 
-Because these data may have some influential points, so it's better to drop data with Cooks Distance larger than 4/n and then analyse the relationship between GDP per capital and suicide rate.
+In Africa and Europe, suicide rate decreases as GDP per capital increases. But in Americas and Oceania, suicide rate increases as GDP per capital increases. In asia, the association between GDP per capital and suicide rate is weak.
+
+Next step is to analyse these data in all-country-level. Because these data may have some influential points, so it's better to drop data with Cooks Distance larger than 4/n and then analyse the relationship between GDP per capital and suicide rate.
 
 ```{r}
 model1 <- lm(suicide_per_100k ~ gdp_per_capita, data = country_gdp)
@@ -178,7 +181,7 @@ summary(model2) %>%
   tidy() 
 ```
 
-After drop influential points, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capital has association with its suicide rate.
+After drop influential points, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capital has association with its suicide rate in all-country-level.
 
 ## Relationship between HDI and suicide
 
@@ -195,12 +198,16 @@ p3 = ggplot(country_gdp_no_hdi, aes(x = hdi_for_year, y = suicide_per_100k, colo
        x = "HDI", 
        y = "Suicides per 100k", 
        col = "continent") +
-theme(axis.text.x = element_text(angle = 90, hjust = 1))
+theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_grid(~continent) +
+  geom_smooth(method = "lm")
 
 ggplotly(p3)
 ```
 
-As mentioned above, first step is to drop data with Cooks Distance larger than 4/n and then analyse the relationship between HDI and suicide rate.
+In Europe, suicide rate decreases as HDI increases. But in other continent, suicide rate increases as HDI increases. 
+
+As mentioned above, next step is to drop data with Cooks Distance larger than 4/n and then analyse the relationship between HDI and suicide rate in all-country-level.
 
 ```{r}
 model3 <- lm(suicide_per_100k ~ hdi_for_year, data = country_gdp_no_hdi)
@@ -218,7 +225,7 @@ summary(model4) %>%
   tidy() 
 ```
 
-After drop the influential point, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, HDI has association with its suicide rate.
+After drop the influential point, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, HDI has association with its suicide rate in all-country-level
 
 ## Correlation between variables
 
