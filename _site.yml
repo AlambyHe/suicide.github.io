@@ -11,7 +11,7 @@ navbar:
       href: dashboard.html
     - text: "Selftest"
       href: selftest.html
-    - text: "model"
+    - text: "Model"
       href: model.html
     - text: "Conclusion"
       href: Conclusion.html
