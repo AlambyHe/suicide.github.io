@@ -119,19 +119,15 @@ overall_tibble = data %>%
 age_color = rev(plasma(6))
 # create new column in data for continent 
 # use countrycode() to extract continents from country names
-data = data %>%  
-  mutate(continent = countrycode(sourcevar = data$country,
+data$continent = countrycode(sourcevar = data$country,
                              origin = "country.name",
-                             destination = "continent")) 
+                             destination = "continent") 
 
 # reclassify countries that have been coded as 'Americas' into 'North America' and 'South America' by countrycode()
 south_america = c('Argentina', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Guyana', 'Paraguay', 'Suriname', 'Uruguay')
 
-data = data %>% 
-  mutate(continent=ifelse(country == south_america, "South America", continent),
-         continent = ifelse(continent == "Americas", "North America", continent),
-         continent = ifelse(country == "Virgin Islands (USA)", "North America", continent))
-
+data$continent[data$country %in% south_america] = 'South America'
+data$continent[data$continent == 'Americas'] = 'North America'
 
 # create a tibble for continent and sex
 continent_age_tibble = data %>%
@@ -156,7 +152,22 @@ highchart() %>%
                   label = list(text = "Mean = 13.09", style = list(color = "black", fontSize = 6))))) %>%    
   hc_legend(verticalAlign = 'top', enabled = FALSE) %>% 
   hc_add_theme(custom_theme)
+
 ```
+
+
+```{rinclude=F}
+age_color = as.factor(colnames(continent_age_tibble)) 
+
+# use plotly to create histogram
+plot_ly(continent_age_tibble, x = ~continent, y = ~x5_14_years, type = "bar", marker = list(color = "#81C7D4")) %>% 
+  add_trace(y = ~x15_24_years, marker = list(color = "#33A6B8")) %>% 
+  add_trace(y = ~x25_34_years, marker = list(color = "#0089A7")) %>% 
+  add_trace(y = ~x35_54_years, marker = list(color = "#336774")) %>% 
+  add_trace(y = ~x55_74_years, marker = list(color = "#255359")) %>% 
+  add_trace(y = ~x75_years, marker = list(color = "#0C4842"))
+```
+
 
 ### We should pay more attention to suicide.
 
@@ -165,3 +176,20 @@ Globally, the availability and quality of data on suicide and suicide attempts i
 
 
 The plots shows the suicide by country.
+
+```{r}
+# create a tibble with suicide per capita by country for 1985-2015
+country_tibble = data %>%
+  select(country, suicides_no, population) %>%
+  group_by(country) %>%
+  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
+
+# create interactive world map
+highchart() %>%
+  hc_add_series_map(worldgeojson, country_tibble, value = "suicide_capita", joinBy = c('name','country'))  %>% 
+  hc_colorAxis(stops = color_stops()) %>% 
+  hc_title(text = "Suicides by Country") %>% 
+  hc_subtitle(text = "1979-2016") %>%
+  hc_tooltip(borderWidth = 1.5, headerFormat = "", valueSuffix = " suicides (per 100K people)") 
+```
+

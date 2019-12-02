@@ -6,7 +6,7 @@ navbar:
     - text: "About"
       href: About.html
     - text: "Overview"
-      href: Overview.html      
+      href: overview.html      
     - text: "Selftest"
       href: selftest.html
     - text: "Analysis"
