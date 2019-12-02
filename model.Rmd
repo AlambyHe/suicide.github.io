@@ -134,7 +134,7 @@ p1 = ggplot(country_year_sig_trends, aes(x = country, y = estimate, col = estima
   theme(legend.position = "none") +
   coord_flip() +
   theme(
-    axis.text.y = element_text(size = 4)
+    axis.text.y = element_text(size = 6)
   )
 
 ggplotly(p1) %>% 
