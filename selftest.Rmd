@@ -2,7 +2,8 @@
 title: "Selftest"
 output: html_document
 ---
-![](./image/do-not-give-up.jpg)
+
+![](https://gifimage.net/wp-content/uploads/2017/11/funny-suicide-gif-8.gif)
 
 **This test is only for fun!**
 

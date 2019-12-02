@@ -3,8 +3,7 @@ title: "Why People Suicide"
 output: 
   html_document
 ---
-
-![](https://gifimage.net/wp-content/uploads/2017/11/funny-suicide-gif-8.gif)
+![](./image/do-not-give-up.jpg)
 
 Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies.
 
