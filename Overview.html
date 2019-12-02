@@ -12,7 +12,7 @@
 
 
 
-<title>Overview</title>
+<title>overview</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,10 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -250,64 +248,10 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
-
-
-
 <style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
+.code-folding-btn { margin-bottom: 4px; }
 </style>
+
 
 
 
@@ -317,16 +261,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -389,21 +323,54 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Overview</h1>
+
+<h1 class="title toc-ignore">overview</h1>
 
 </div>
 
 
-<div id="overview" class="section level1">
-<h1>Overview</h1>
+<div id="why-do-we-care-about-suicide" class="section level2">
+<h2>Why do we care about suicide?</h2>
+<p>Last month, the suicide of South Korean singers <em>Sulli</em> and <em>Goo Hara</em> shocked the world.</p>
+<p><embed src="%22./image/sullihara.jpg%22" /></p>
+<p>Beyond shock, we hope to find out what kind of people have high risk of suicide and why do people commit suicide.</p>
+</div>
+<div id="is-susicide-a-worldwide-public-heahth-problem" class="section level2">
+<h2>Is susicide a worldwide public heahth problem?</h2>
+<p><em>Key facts</em> <a href="https://www.who.int/en/news-room/fact-sheets/detail/suicide">from WHO</a></p>
+<ul>
+<li>Close to <span style="color:red;">800,000</span> people die due to suicide every year.</li>
+<li>Suicide is the <span style="color:red;">third</span> leading cause of death in 15-19-year-olds.</li>
+<li><span style="color:red;">79%</span> of global suicides occur in low- and middle-income countries.</li>
+</ul>
+</div>
+<div id="who-is-at-risk" class="section level2">
+<h2>Who is at risk?</h2>
+<ul>
+<li>People with mental disorders (in particular, depression and alcohol use disorders)</li>
+<li>Many suicides also happen impulsively in moments of crisis with a breakdown in the ability to deal with life stresses, such as financial problems, relationship break-up or chronic pain and illness.</li>
+<li>Experiencing conflict, disaster, violence, abuse, or loss and a sense of isolation are strongly associated with suicidal behaviour.</li>
+<li>Suicide rates are also high amongst vulnerable groups who experience discrimination, such as refugees and migrants; indigenous peoples; lesbian, gay, bisexual, transgender, intersex (LGBTI) persons; and prisoners.</li>
+</ul>
+<p>The plot below shows suicides by continent and age from 1979 to 2016.</p>
+<div id="we-should-pay-more-attention-to-suicide." class="section level3">
+<h3>We should pay more attention to suicide.</h3>
+<p>Globally, the availability and quality of data on suicide and suicide attempts is poor. Only 80 Member States have good-quality vital registration data that can be used directly to estimate suicide rates. The system must improve to monitor suicide incidence so that to prevent and control it.</p>
+<p>The plots shows the suicide by country.</p>
+</div>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -435,33 +402,12 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-
 <script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
 });
 </script>
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
