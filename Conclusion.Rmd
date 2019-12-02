@@ -10,9 +10,9 @@ output:
 
 According to the WHO suicide data from 1979 to 2016, South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decresed the most. Overall, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend.
 
-GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capital and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
+GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
 
-We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfiction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capital and happiness score; In America, suicide rate had positive correlations with gdp per capital, happiness score, degree of satisfiction with family and life expectancy.
+We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfaction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capita and happiness score; In America, suicide rate had positive correlations with gdp per capita, happiness score, degree of satisfaction with family and life expectancy.
 
 # Suicide Prevention
 
@@ -20,4 +20,4 @@ suicides are preventable and effective interventions exist. First and foremost, 
 
 Want to explore more in suicide prevention? [Here](https://www.who.int/health-topics/suicide#tab=tab_1) are the sources.
 
-![](./good day.png)
+![](./image/good day.png)

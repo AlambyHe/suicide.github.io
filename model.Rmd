@@ -290,7 +290,7 @@ corrplot(Cor.data, method = 'square', addCoef.col = "black", tl.col = "black", t
 
 Countries in different continent may have different outcomes, which leading to the uncorrelation between suicide rate with other varaibles. So it's more accurate to analyse these data in continent level.
 
-Given that there are few data about Africa and Oceania (1 data point in Oceania and 3 data point in Africa), so only three continents - Americas, Asia and Europe can be analysed.
+Given that there are few data about Africa and Oceania (1 data point in Oceania and 3 data point in Africa), so only three continents - Americas, Asia and Europe can be analyzed.
 
 **correlation between suicide rate and other variables in Asia**
 
@@ -300,7 +300,7 @@ Cor.data_asia <- cor(asia_overall[, Num.cols_asia])
 corrplot(Cor.data_asia, method = 'square', addCoef.col = "black", tl.col = "black", tl.srt = 45, diag = FALSE, number.cex = .7)
 ```
 
-Suicide rate in Asia has a slightly positive correlation with degree of satisfiction with family, freedom, but has a slightly negtive correlation with trust of government and gdp per capita.
+Suicide rate in Asia has a slightly positive correlation with degree of satisfaction with family, freedom, but has a slightly negtive correlation with trust of government and gdp per capita.
 
 **correlation between suicide rate and other variables in Europe**
 
