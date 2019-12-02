@@ -2,6 +2,9 @@
 title: "Selftest"
 output: html_document
 ---
+![](./image/do-not-give-up.jpg)
+
+**This test is only for fun!**
 
 <p>Have you ever suffered from any mental illness?</p>
   <input type="radio" name="ill" value="1"> Yes<br>
@@ -34,7 +37,7 @@ output: html_document
 </span>
 
 <span class="suicide">
-![](https://media.giphy.com/media/ySMINwPzf50IM/giphy.gif)
+![](https://media.giphy.com/media/vkwAeqMEUSaoU/giphy.gif)
 </span>
 
 
