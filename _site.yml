@@ -6,13 +6,13 @@ navbar:
     - text: "About"
       href: About.html
     - text: "Overview"
-      href: overview.html      
+      href: Overview.html
+    - text: "Analysis"
+      href: dashboard.html
     - text: "Selftest"
       href: selftest.html
-    - text: "Analysis"
-      menu:
-      - text: "model"
-        href: model.html
+    - text: "model"
+      href: model.html
     - text: "Conclusion"
       href: Conclusion.html
     - icon: fa-envelope fa-lg
