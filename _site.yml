@@ -5,7 +5,7 @@ navbar:
    right:
     - text: "Dashboard"
       href: dashboard.html
-    - text: "Analysis"
+    - text: "Overview"
       href: Analysis.html
     - text: "Selftest"
       href: selftest.html
