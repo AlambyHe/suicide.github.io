@@ -2,8 +2,12 @@
 title: "Selftest"
 output: html_document
 ---
+<center>
 
 ![](https://gifimage.net/wp-content/uploads/2017/11/funny-suicide-gif-8.gif)
+
+</center>
+
 
 **This test is only for fun!**
 

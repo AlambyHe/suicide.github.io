@@ -3,7 +3,12 @@ title: "Why People Suicide"
 output: 
   html_document
 ---
-![](./image/do-not-give-up.jpg)
+
+<center>
+
+<img src="./image/do-not-give-up.jpg" width="500px" height="auto">
+
+</center>
 
 Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies.
 
