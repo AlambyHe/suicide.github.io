@@ -27,19 +27,19 @@ Using our analysis results and other website links to help people know more abou
 ## Data
 
 WHO Suicide Statistics
+<ul>
+<li>Basic historical (1979-2016) data by country, year and demographic groups.</li>
 
-*Basic historical (1979-2016) data by country, year and demographic groups.
+<li>6 variables in total, focused on plotting and analyzing global suiside rate.</li>
 
-*6 variables in total, focused on plotting and analyzing global suiside rate.
+<li>Can be found [here](https://www.kaggle.com/szamil/who-suicide-statistics)</li>
+</ul>
 
-*Can be found [here](https://www.kaggle.com/szamil/who-suicide-statistics)
 
 World Happiness Report
-
-*Happiness scored from 2015 to 2017 according to economic production, social support, etc.
-
-*12 variables in total, focused on model building to explore the causes of suicide.
-
-*Can be found [here](https://www.kaggle.com/unsdsn/world-happiness)
-
+<ul>
+<li>Happiness scored from 2015 to 2017 according to economic production, social support, etc.</li>
+<li>12 variables in total, focused on model building to explore the causes of suicide.</li>
+<li>Can be found [here](https://www.kaggle.com/unsdsn/world-happiness)</li>
+</ul>
 ## Screencast
