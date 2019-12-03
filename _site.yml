@@ -3,14 +3,14 @@ output_dir: "."
 navbar:
    title: "Home"
    right:
-    - text: "Dashboard"
-      href: dashboard.html
-    - text: "Analysis"
-      href: Analysis.html
-    - text: "Selftest"
-      href: selftest.html
     - text: "Model"
       href: model.html
+    - text: "Analysis"
+      href: Analysis.html
+    - text: "Dashboard"
+      href: dashboard.html
+    - text: "Selftest"
+      href: selftest.html
     - text: "Conclusion"
       href: Conclusion.html
     - icon: fa-envelope fa-lg
@@ -21,4 +21,4 @@ navbar:
       href: https://suicidepreventionlifeline.org/
 output:
   html_document:
-    theme: journal
+    theme:flatly
