@@ -92,7 +92,7 @@ Worldwide
 -----------------------------------------------------------------------
 
 ### Worldwide suicides {.no-padding}
-```{r fig.height=7.6}
+```{r fig.height=6.5}
 # create tibble for our line plot  
 overall_tibble = data %>%
   select(year, suicides_no, population) %>%
@@ -118,7 +118,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Gender {.no-padding}
-```{r fig.height=7.6}
+```{r fig.height=6.5}
 # create tibble for sex so it can be used to create our line plot 
 sex_tibble = data %>%
   select(year, sex, suicides_no, population) %>%
@@ -146,7 +146,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Age {.no-padding}
-```{r fig.height=7.6}
+```{r fig.height=6.5}
 # create tibble for age so it can be used to create our line plot 
 age_tibble = data %>%
   select(year, age, suicides_no, population) %>%
@@ -178,7 +178,7 @@ Column {data-width=300}
 -----------------------------------------------------------------------
 
 ### Suicides per 100K <font size='1'> (1979-2016) </font>
-```{r fig.height=1.8}
+```{r fig.height=1.1}
 # grab worldwide number of suicides per 100K people from the data
 total_suicides = round(mean(overall_tibble$suicide_capita), 2)
 
@@ -187,7 +187,7 @@ valueBox(total_suicides, icon = "fa-plus", color = 'firebrick')
 ```
 
 ### Worldwide suicides by Gender {.no-title .no-padding .colored }
-```{r fig.height=2.9}
+```{r fig.height=2.7}
 # make a tibble of suicide by sex
 pie_sex = data %>%
   select(sex, suicides_no, population) %>%
@@ -208,7 +208,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Age {.no-title .no-padding .colored }
-```{r fig.height=2.9}
+```{r fig.height=2.7}
 # create a tibble of suicide by age
 pie_age = data %>%
   select(age, suicides_no, population) %>%
@@ -250,7 +250,7 @@ data$continent[data$continent == 'Americas'] = 'North America'
 ```
 
 ### Suicides by continent and Gender {.no-title .no-padding .colored }
-```{r fig.height=2.35}
+```{r fig.height=3.2}
 # create a tibble for continent and sex
 continent_sex_tibble = data %>%
   select(continent, sex, suicides_no, population) %>%
@@ -277,7 +277,7 @@ hc_add_series(continent_sex_tibble, hcaes(x = continent, y = suicide_capita, gro
 ```
 
 ### Suicides by continent and Age {.no-title .no-padding .colored }
-```{r fig.height=2.35}
+```{r fig.height=3.2}
 # create a tibble for continent and sex
 continent_age_tibble = data %>%
   select(continent, age, suicides_no, population) %>%
@@ -308,7 +308,7 @@ Column {data-width=625}
 -----------------------------------------------------------------------
 
 ### Suicides by continent {.no-title .no-padding .colored }
-```{r}
+```{r fig.height=6.4}
 # import continent map data from the internet. 
 map_data = download_map_data("custom/world-continents")
 
@@ -339,7 +339,7 @@ Column {.tabset .tabset-fade data-width=400 .colored }
 -----------------------------------------------------------------------
 
 ### By country {.no-padding}
-```{r fig.height=4.55}
+```{r fig.height=6.4}
 # create tibble for overall suicides by country
 country_bar = data %>%
   select(country, suicides_no, population) %>%
@@ -366,7 +366,7 @@ highchart() %>%
 ```
 
 ### By gender {.no-padding}
-```{r fig.height=4.65}
+```{r fig.height=6.4}
 # create tibble for suicide by countries and sex 
 country_bar_sex = data %>%
   select(country, sex, suicides_no, population) %>%
@@ -396,7 +396,7 @@ highchart() %>%
 ```
 
 ### By age {.no-padding}
-```{r fig.height=4.65}
+```{r fig.height=6.4}
 # create tibble for suicide by countries and age 
 country_bar_age = data %>%
   select(country, age, suicides_no, population) %>%
@@ -424,7 +424,7 @@ Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Suicides by country {.no-title .no-padding .colored }
-```{r fig.height=4.9}
+```{r fig.height=6.4}
 # create a tibble with suicide per capita by country for 1985-2015
 country_tibble = data %>%
   select(country, suicides_no, population) %>%
@@ -450,7 +450,7 @@ Column {data-width=250}
 ### Filters {.no-title .colored }
 
 **Pick filters here:**
-```{r}
+```{r fig.height=6.4}
 # create tibble for our line plot 
 country_year_tibble = data %>%
   select(country, year, suicides_no, population) %>%
@@ -470,7 +470,7 @@ filter_select("country", "Country", shared_data, ~ country, allLevels = TRUE, mu
 ***
 
 **Data table**
-```{r}
+```{r fig.height=6.4}
 # create datatable
 datatable(shared_data,
           rownames = FALSE,
@@ -489,7 +489,7 @@ Column {data-width=750}
 -----------------------------------------------------------------------
 
 ### Suicides by country {.no-title .colored }
-```{r}
+```{r fig.height=6.4}
 # set a random seed to reproduce the random sample of colors we will use for our next graph 
 set.seed(20191029)
 
