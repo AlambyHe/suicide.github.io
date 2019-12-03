@@ -6,8 +6,6 @@ output:
     toc_float: true
 ---
 
-# Conclusion
-
 According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
 
 GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
