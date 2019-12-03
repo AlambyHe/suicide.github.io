@@ -92,7 +92,7 @@ Worldwide
 -----------------------------------------------------------------------
 
 ### Worldwide suicides {.no-padding}
-```{r fig.height=5}
+```{r fig.height=7.6}
 # create tibble for our line plot  
 overall_tibble = data %>%
   select(year, suicides_no, population) %>%
@@ -118,7 +118,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Gender {.no-padding}
-```{r fig.height=5.14}
+```{r fig.height=7.6}
 # create tibble for sex so it can be used to create our line plot 
 sex_tibble = data %>%
   select(year, sex, suicides_no, population) %>%
@@ -146,7 +146,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Age {.no-padding}
-```{r fig.height=5.13}
+```{r fig.height=7.6}
 # create tibble for age so it can be used to create our line plot 
 age_tibble = data %>%
   select(year, age, suicides_no, population) %>%
@@ -178,7 +178,7 @@ Column {data-width=300}
 -----------------------------------------------------------------------
 
 ### Suicides per 100K <font size='1'> (1979-2016) </font>
-```{r fig.height=0.8}
+```{r fig.height=1.8}
 # grab worldwide number of suicides per 100K people from the data
 total_suicides = round(mean(overall_tibble$suicide_capita), 2)
 
@@ -187,7 +187,7 @@ valueBox(total_suicides, icon = "fa-plus", color = 'firebrick')
 ```
 
 ### Worldwide suicides by Gender {.no-title .no-padding .colored }
-```{r fig.height=1.9}
+```{r fig.height=2.9}
 # make a tibble of suicide by sex
 pie_sex = data %>%
   select(sex, suicides_no, population) %>%
@@ -208,7 +208,7 @@ highchart() %>%
 ```
 
 ### Worldwide suicides by Age {.no-title .no-padding .colored }
-```{r fig.height=1.9}
+```{r fig.height=2.9}
 # create a tibble of suicide by age
 pie_age = data %>%
   select(age, suicides_no, population) %>%
