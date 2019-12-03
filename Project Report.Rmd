@@ -1,0 +1,10 @@
+---
+title: "Project Report"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Additional Analysis
+In order to alarm our audience to be aware of their potential mental illness which could lead to suicide, we conduct a small selftest program to predict the “probability” of committing suicide. Our motivation is never to encourage self-harm of any kind, including suicide. The only incentive behind this questionnaire is to encourage people to step out of their comfort zone and directly face their potential mental illness. The questionnaire includes some risk factors we found in our model as well as some proven risk factors found in publications. The prediction results is categorized to five levels and will automatically shows up after clicking the “submit” button. Instead of explicitly showing a number of “probability”, we use five GIFs to imply the “probability” of suicide. So that even though people who take our test used to or is suffering from severe mental illness, they will feel less stressful when seeing the test results. 

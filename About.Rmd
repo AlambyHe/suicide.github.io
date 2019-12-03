@@ -5,6 +5,9 @@ output:
     toc: true
     toc_float: true
 ---
+
+<p style="font-style:italic;">Junhui Mi, Tianhui He, Shenglin Liu, Xinru Wang, Yiyang Liu </p>
+
 Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies. <br>Suicides are PREVENTABLE. Much can be done to prevent suicide at individual, community and national levels.
 <br>
 <br>
