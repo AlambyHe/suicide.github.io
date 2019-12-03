@@ -6,7 +6,7 @@ output:
 
 <center>
 
-<img src="./image/do-not-give-up.jpg" width="500px" height="auto">
+<img src="./image/do-not-give-up.jpg" width="700px" height="auto">
 
 </center>
 
