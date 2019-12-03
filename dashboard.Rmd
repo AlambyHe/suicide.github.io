@@ -1,6 +1,6 @@
 ---
 title: "dashboard"
-date: "11/29/2019"
+date: "12/02/2019"
 output: 
   flexdashboard::flex_dashboard:
     source_code: embed
@@ -126,7 +126,7 @@ sex_tibble = data %>%
   summarise(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
 
 # pick color for gender
-sex_color = c("#EE6AA7", "#87CEEB") # baby blue & pink
+sex_color = c("#EE6AA7", "#87CEEB")
 
 # create line plot
 highchart() %>% 
@@ -154,7 +154,7 @@ age_tibble = data %>%
   summarise(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
 
 # pick color for graph
-age_color = rev(plasma(6))
+age_color = rev(magma(6))
 
 # create a line plot
 highchart() %>% 
@@ -232,8 +232,10 @@ highchart() %>%
 Continents 
 ========================================================================
 
-Column {data-width=375}
+Column {data-width=625}
 -----------------------------------------------------------------------
+
+### Suicides by continent {.no-title .no-padding .colored }
 
 ```{r include=FALSE}
 # create new column in data for continent 
@@ -249,6 +251,33 @@ data$continent[data$country %in% south_america] = 'South America'
 data$continent[data$continent == 'Americas'] = 'North America'
 ```
 
+```{r fig.height=6.4}
+# import continent map data from the internet. 
+map_data = download_map_data("custom/world-continents")
+
+# create a tibble for continent
+continent_tibble = data %>%
+  select(continent, suicides_no, population) %>%
+  group_by(continent) %>%
+  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) %>%
+  arrange(suicide_capita)
+
+# create continent map with suicide data 
+highchart() %>%
+hc_add_series_map(map_data, continent_tibble, value = "suicide_capita", joinBy = c('name','continent'), name = "Suicides (per 100K people)")  %>% 
+    hc_add_series(continent_tibble, hcaes(x = continent, y = suicide_capita, color = suicide_capita), type = "pie", name = 'Suicides (per 100K people)')  %>% 
+    hc_colorAxis(stops = color_stops()) %>% 
+    hc_title(text = "Suicides by Continent") %>% 
+    hc_subtitle(text = "1979-2016") %>%
+    hc_tooltip(borderWidth = 1.5, valueSuffix = '') %>%
+    hc_plotOptions(
+    pie = list(center = c('10%', '80%'), size = 110, dataLabels = list(enabled = FALSE))) %>% 
+    hc_add_theme(custom_theme)
+```
+
+Column {data-width=375}
+-----------------------------------------------------------------------
+
 ### Suicides by continent and Gender {.no-title .no-padding .colored }
 ```{r fig.height=3.2}
 # create a tibble for continent and sex
@@ -256,6 +285,7 @@ continent_sex_tibble = data %>%
   select(continent, sex, suicides_no, population) %>%
   group_by(continent, sex) %>%
   summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
+continent_sex_tibble = continent_sex_tibble[complete.cases(continent_sex_tibble), ]
 
 # create histogram of suicides by continent
 highchart() %>%
@@ -283,6 +313,7 @@ continent_age_tibble = data %>%
   select(continent, age, suicides_no, population) %>%
   group_by(continent, age) %>%
   summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) 
+continent_age_tibble = continent_age_tibble[complete.cases(continent_age_tibble), ]
 
 # create histogram of suicides by continent.
 highchart() %>%
@@ -303,37 +334,29 @@ hc_add_series(continent_age_tibble, hcaes(x = continent, y = suicide_capita, gro
     hc_add_theme(custom_theme)
 ```
 
-
-Column {data-width=625}
------------------------------------------------------------------------
-
-### Suicides by continent {.no-title .no-padding .colored }
-```{r fig.height=6.4}
-# import continent map data from the internet. 
-map_data = download_map_data("custom/world-continents")
-
-# create a tibble for continent
-continent_tibble = data %>%
-  select(continent, suicides_no, population) %>%
-  group_by(continent) %>%
-  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) %>%
-  arrange(suicide_capita)
-
-# create continent map with suicide data 
-highchart() %>%
-hc_add_series_map(map_data, continent_tibble, value = "suicide_capita", joinBy = c('name','continent'), name = "Suicides (per 100K people)")  %>% 
-    hc_add_series(continent_tibble, hcaes(x = continent, y = suicide_capita, color = suicide_capita), type = "pie", name = 'Suicides (per 100K people)')  %>% 
-    hc_colorAxis(stops = color_stops()) %>% 
-    hc_title(text = "Suicides by Continent") %>% 
-    hc_subtitle(text = "1979-2016") %>%
-    hc_tooltip(borderWidth = 1.5, valueSuffix = '') %>%
-    hc_plotOptions(
-    pie = list(center = c('10%', '80%'), size = 110, dataLabels = list(enabled = FALSE))) %>% 
-    hc_add_theme(custom_theme)
-```
-
 Countries
 ========================================================================
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Suicides by country {.no-title .no-padding .colored }
+```{r fig.height=6.4}
+# create a tibble with suicide per capita by country for 1985-2015
+country_tibble = data %>%
+  select(country, suicides_no, population) %>%
+  group_by(country) %>%
+  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
+
+# create interactive world map
+highchart() %>%
+hc_add_series_map(worldgeojson, country_tibble, value = "suicide_capita", joinBy = c('name','country'))  %>% 
+    hc_colorAxis(stops = color_stops()) %>% 
+    hc_title(text = "Suicides by Country") %>% 
+    hc_subtitle(text = "1979-2016") %>%
+    hc_tooltip(borderWidth = 1.5, headerFormat = "", valueSuffix = " suicides (per 100K people)") %>% 
+    hc_add_theme(custom_theme)
+```
 
 Column {.tabset .tabset-fade data-width=400 .colored }
 -----------------------------------------------------------------------
@@ -416,28 +439,6 @@ highchart() %>%
     hc_yAxis(title = list(text = "Percent of total suicides")) %>%
     hc_plotOptions(bar = list(stacking = "percent", 
                               pointPadding = 0, groupPadding = 0, borderWidth = 0.5)) %>% 
-    hc_add_theme(custom_theme)
-```
-
-
-Column {data-width=600}
------------------------------------------------------------------------
-
-### Suicides by country {.no-title .no-padding .colored }
-```{r fig.height=6.4}
-# create a tibble with suicide per capita by country for 1985-2015
-country_tibble = data %>%
-  select(country, suicides_no, population) %>%
-  group_by(country) %>%
-  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
-
-# create interactive world map
-highchart() %>%
-hc_add_series_map(worldgeojson, country_tibble, value = "suicide_capita", joinBy = c('name','country'))  %>% 
-    hc_colorAxis(stops = color_stops()) %>% 
-    hc_title(text = "Suicides by Country") %>% 
-    hc_subtitle(text = "1979-2016") %>%
-    hc_tooltip(borderWidth = 1.5, headerFormat = "", valueSuffix = " suicides (per 100K people)") %>% 
     hc_add_theme(custom_theme)
 ```
 
