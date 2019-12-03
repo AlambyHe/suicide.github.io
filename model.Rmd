@@ -324,5 +324,3 @@ corrplot(Cor.data_america, method = 'square', addCoef.col = "black", tl.col = "b
 ```
 
 Suicide rate in America has a positive correlation with gdp per capita, happiness score, degree of satisfaction with family, freedom, trust of government and generosity, which means that if a country in Americas is more prosperous and has a relatively higher happiness score, it is more likely to have a higher suicide rate.
-
-
