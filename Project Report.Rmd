@@ -5,7 +5,6 @@ output:
     toc: true
     toc_float: true
 ---
-
 <p style="font-style:italic;">Junhui Mi, Tianhui He, Shenglin Liu, Xinru Wang, Yiyang Liu </p>
 
 <p style="font-style:italic;">December 3, 2019 </p>
@@ -32,7 +31,7 @@ We use our analysis results, a selftest for fun and other website links to help 
 
 ## Data
 
-WHO Suicide Statistics
+**WHO Suicide Statistics**
 <ul>
 <li>Basic historical (1979-2016) data by country, year and demographic groups.</li>
 
@@ -40,7 +39,7 @@ WHO Suicide Statistics
 </ul>
 
 
-World Happiness Report
+**World Happiness Report**
 <ul>
 <li>Happiness scored from 2015 to 2017 according to economic production, social support, etc.</li>
 <li>12 variables in total, focused on model building to explore the causes of suicide.</li>
@@ -52,11 +51,47 @@ World Happiness Report
 ### Overall trend
 According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
 
+<center>
+
+<img src="./image/year.jpg" width="600px" height="auto">
+
+</center>
+
 ### Impact of GDP and HDI
 GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
 
+<center>
+
+<img src="./image/gdp.jpg" width="600px" height="auto">
+
+</center>
+
+<center>
+
+<img src="./image/hdi.jpg" width="600px" height="auto">
+
+</center>
+
 ### Other correlations of interest
 We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfaction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capita and happiness score; In America, suicide rate had positive correlations with gdp per capita, happiness score, degree of satisfaction with family and life expectancy.
+
+<center>
+
+<img src="./image/asia.jpg" width="600px" height="auto">
+
+</center>
+
+<center>
+
+<img src="./image/europe.jpg" width="600px" height="auto">
+
+</center>
+
+<center>
+
+<img src="./image/americas.jpg" width="600px" height="auto">
+
+</center>
 
 We also found that male are 3 times more likely to commit suicide than female. European men has the highest suicide ratio from 1979 to 2016. People over 75 years old has the highest suicide ratio in all population, especially in Asia. Africa is very special. The realtionship between neither gender & suicide nor age & suicide is significant in Africa and it has the extremely low suicide ratio compared to other continents. This may due to lack of data in Africa (there are only 2 countries in Africa that have data on suicide)
 
