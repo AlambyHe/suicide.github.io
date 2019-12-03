@@ -1,5 +1,4 @@
 ---
-title: "Conclusion"
 output: 
   html_document:
     toc: true
@@ -8,15 +7,19 @@ output:
 
 # Conclusion
 
-According to the WHO suicide data from 1979 to 2016, South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decresed the most. Overall, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend.
+According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
 
 GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
 
 We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfaction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capita and happiness score; In America, suicide rate had positive correlations with gdp per capita, happiness score, degree of satisfaction with family and life expectancy.
 
+We also found that male are 3 times more likely to commit suicide than female. European men has the highest suicide ratio from 1979 to 2016. People over 75 years old has the highest suicide ratio in all population, especially in Asia. Africa is very special. The realtionship between neither gender & suicide nor age & suicide is significant in Africa and it has the extremely low suicide ratio compared to other continents. This may due to lack of data in Africa (there are only 2 countries in Africa that have data on suicide)
+
+However, the availability and quality of data on suicide is poor. Many large countries such as China and India don't have data on suicide. Further data collection and suicide incidence monitoring are the direction in the future.
+
 # Suicide Prevention
 
-suicides are preventable and effective interventions exist. First and foremost, early identification and treatment of depression and alcohol use disorders are key for the prevention of suicide at individual level, as well as follow-up contact with those who have attempted suicide and psychosocial support in communities. Equally important are effective interventions at population level aiming to reduce access to the means of suicide, to adopt responsible reporting of suicide by the media, and to introduce alcohol policies to reduce the harmful use of alcohol. From the health systems perspective, it is imperative for health-care services to incorporate suicide prevention as a core component.
+Suicides are preventable and effective interventions exist. First and foremost, early identification and treatment of depression and alcohol use disorders are key for the prevention of suicide at individual level, as well as follow-up contact with those who have attempted suicide and psychosocial support in communities. Equally important are effective interventions at population level aiming to reduce access to the means of suicide, to adopt responsible reporting of suicide by the media, and to introduce alcohol policies to reduce the harmful use of alcohol. From the health systems perspective, it is imperative for health-care services to incorporate suicide prevention as a core component.
 
 Want to explore more in suicide prevention? [Here](https://www.who.int/health-topics/suicide#tab=tab_1) are the sources.
 
