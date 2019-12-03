@@ -1,6 +1,6 @@
 ---
 title: "dashboard"
-date: "11/29/2019"
+date: "12/02/2019"
 output: 
   flexdashboard::flex_dashboard:
     source_code: embed
@@ -256,6 +256,7 @@ continent_sex_tibble = data %>%
   select(continent, sex, suicides_no, population) %>%
   group_by(continent, sex) %>%
   summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
+continent_sex_tibble = continent_sex_tibble[complete.cases(continent_sex_tibble), ]
 
 # create histogram of suicides by continent
 highchart() %>%
@@ -283,6 +284,7 @@ continent_age_tibble = data %>%
   select(continent, age, suicides_no, population) %>%
   group_by(continent, age) %>%
   summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) 
+continent_age_tibble = continent_age_tibble[complete.cases(continent_age_tibble), ]
 
 # create histogram of suicides by continent.
 highchart() %>%
