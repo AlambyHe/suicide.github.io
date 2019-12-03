@@ -396,9 +396,75 @@ div.tocify {
 </div>
 
 
+<p style="font-style:italic;">
+Junhui Mi, Tianhui He, Shenglin Liu, Xinru Wang, Yiyang Liu
+</p>
+<p style="font-style:italic;">
+December 3, 2019
+</p>
+<div id="motivation" class="section level2">
+<h2>Motivation</h2>
+<div id="facts-about-suicide" class="section level3">
+<h3>Facts about suicide</h3>
+<p>Suicide has been of increasing concern all over the world. Nowadays, close to 800,000 people die by suicide every year. Furthermore, for each suicide, there are more than 20 suicide attempts. Suicides are the leading causes of death among teenagers and young adults death.</p>
+<p><img src="image/top-three-causes.png" /></p>
+</div>
+<div id="objective" class="section level3">
+<h3>Objective</h3>
+<p>Our objective is to develop an online resource to plot and analyze global suiside rate, find out what kind of people have high risk of suicide, and build models to explore the causes of suicide. The target audience for this webpage is all who is interesed in the causes of suicide and want to prevent himself/herself or people around from suicide. The goal of this resource is to raise awareness on the widespread impact of suicides, and inform public that suicides are preventable.</p>
+</div>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>We use Flexdashboard to create maps and plots of global suicide rate from 1979 to 2016, and separate analysis of suicide rate across years, gender and age.</p>
+<p>We use regression models and correlation analysis to explore the association between suicides and gdp, happiness and other covirates.</p>
+<p>We use our analysis results, a selftest for fun and other website links to help people know more about suicides and prevent suicides.</p>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+WHO Suicide Statistics
+<ul>
+<li>
+Basic historical (1979-2016) data by country, year and demographic groups.
+</li>
+<li>
+6 variables in total, focused on plotting and analyzing global suiside rate.
+</li>
+</ul>
+World Happiness Report
+<ul>
+<li>
+Happiness scored from 2015 to 2017 according to economic production, social support, etc.
+</li>
+<li>
+12 variables in total, focused on model building to explore the causes of suicide.
+</li>
+</ul>
+</div>
+<div id="findings" class="section level2">
+<h2>Findings</h2>
+<div id="overall-trend" class="section level3">
+<h3>Overall trend</h3>
+<p>According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija’s suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.</p>
+</div>
+<div id="impact-of-gdp-and-hdi" class="section level3">
+<h3>Impact of GDP and HDI</h3>
+<p>GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.</p>
+</div>
+<div id="other-correlations-of-interest" class="section level3">
+<h3>Other correlations of interest</h3>
+<p>We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfaction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capita and happiness score; In America, suicide rate had positive correlations with gdp per capita, happiness score, degree of satisfaction with family and life expectancy.</p>
+<p>We also found that male are 3 times more likely to commit suicide than female. European men has the highest suicide ratio from 1979 to 2016. People over 75 years old has the highest suicide ratio in all population, especially in Asia. Africa is very special. The realtionship between neither gender &amp; suicide nor age &amp; suicide is significant in Africa and it has the extremely low suicide ratio compared to other continents. This may due to lack of data in Africa (there are only 2 countries in Africa that have data on suicide)</p>
+<p>However, the availability and quality of data on suicide is poor. Many large countries such as China and India don’t have data on suicide. Further data collection and suicide incidence monitoring are the direction in the future.</p>
+</div>
+</div>
 <div id="additional-analysis" class="section level2">
 <h2>Additional Analysis</h2>
 <p>In order to alarm our audience to be aware of their potential mental illness which could lead to suicide, we conduct a small selftest program to predict the “probability” of committing suicide. Our motivation is never to encourage self-harm of any kind, including suicide. The only incentive behind this questionnaire is to encourage people to step out of their comfort zone and directly face their potential mental illness. The questionnaire includes some risk factors we found in our model as well as some proven risk factors found in publications. The prediction results is categorized to five levels and will automatically shows up after clicking the “submit” button. Instead of explicitly showing a number of “probability”, we use five GIFs to imply the “probability” of suicide. So that even though people who take our test used to or is suffering from severe mental illness, they will feel less stressful when seeing the test results.</p>
+</div>
+<div id="implication" class="section level2">
+<h2>Implication</h2>
+<p>Suicides are preventable and effective interventions exist. First and foremost, early identification and treatment of depression and alcohol use disorders are key for the prevention of suicide at individual level, as well as follow-up contact with those who have attempted suicide and psychosocial support in communities. Equally important are effective interventions at population level aiming to reduce access to the means of suicide, to adopt responsible reporting of suicide by the media, and to introduce alcohol policies to reduce the harmful use of alcohol. From the health systems perspective, it is imperative for health-care services to incorporate suicide prevention as a core component.</p>
 </div>
 
 
