@@ -3,12 +3,12 @@ output_dir: "."
 navbar:
    title: "Home"
    right:
-    - text: "Model"
-      href: model.html
-    - text: "Analysis"
+    - text: "Overview"
       href: Analysis.html
     - text: "Dashboard"
       href: dashboard.html
+    - text: "Model"
+      href: model.html
     - text: "Selftest"
       href: selftest.html
     - text: "Conclusion"

@@ -3,16 +3,13 @@ title: "Why People Suicide"
 output: 
   html_document
 ---
+Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies. <br>Suicides are PREVENTABLE. Much can be done to prevent suicide at individual, community and national levels.
 
 <center>
 
-<img src="./image/do-not-give-up.jpg" width="700px" height="auto">
+<img src="./image/do-not-give-up.jpg" width="600px" height="auto">
 
 </center>
-
-Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies.
-
-Suicides are preventable. Much can be done to prevent suicide at individual, community and national levels. 
 
 ## Motivation
 
