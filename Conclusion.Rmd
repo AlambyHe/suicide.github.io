@@ -1,10 +1,11 @@
 ---
-title: "Conclusion"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
+
+# Conclusion
 
 According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
 
