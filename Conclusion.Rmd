@@ -7,10 +7,6 @@ output:
 
 <h3>Conclusion</h3>
 
-<center>
-![](https://media.giphy.com/media/l2JeiuwmhZlkrVOkU/giphy.gif)
-</center>
-
 We found that suicide rate is associated with GDP, HDI, gender, age and location.
 
 According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
@@ -22,6 +18,11 @@ We also discovered other correlations in continent level. In Asia, suicide rate 
 We also found that male are 3 times more likely to commit suicide than female. European men has the highest suicide ratio from 1979 to 2016. People over 75 years old has the highest suicide ratio in all population, especially in Asia. Africa is very special. The realtionship between neither gender & suicide nor age & suicide is significant in Africa and it has the extremely low suicide ratio compared to other continents. This may due to lack of data in Africa (there are only 2 countries in Africa that have data on suicide)
 
 However, the availability and quality of data on suicide is poor. Many large countries such as China and India don't have data on suicide. Further data collection and suicide incidence monitoring are the direction in the future.
+
+
+<center>
+![](https://media.giphy.com/media/l2JeiuwmhZlkrVOkU/giphy.gif)
+</center>
 
 <br>
 <h3>Suicide Prevention</h3>
