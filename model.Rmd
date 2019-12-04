@@ -33,7 +33,9 @@ library(plotly)
 library(mgcv)
 ```
 
-## Suicide rate chages with year
+
+<br>
+<h3>Suicide rate chages with year</h3>
 
 ```{r, message=FALSE, warning=FALSE}
 ## read data
@@ -143,7 +145,9 @@ ggplotly(p1) %>%
 
 We can get a conclusion that nearly a half of all countries have suicide rates that are changing linearly as time progresses. Between those countries that have suicide rate changing linearly as time progresses, there are 32 (2/3) countries have a decreasing trend. Overall, the suicide rate decreases as time progresses.
 
-## Relationship between economy and suicide
+
+<br>
+<h3>Relationship between economy and suicide</h3>
 
 ```{r,warning=FALSE, message=FALSE}
 country_gdp = country_year %>% 
@@ -182,7 +186,8 @@ summary(model2) %>%
 
 After drop influential points, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, GDP per capita has association with its suicide rate in all-country-level.
 
-## Relationship between HDI and suicide
+<br>
+<h3>Relationship between HDI and suicide</h3>
 
 ```{r,message=FALSE, warning=FALSE}
 country_gdp_no_hdi = country_year %>% 
@@ -226,7 +231,8 @@ summary(model4) %>%
 
 After drop the influential point, the p-value is smaller than 0.05, so we can say that at 0.05 significance level, HDI has association with its suicide rate in all-country-level
 
-## Correlation between variables
+<br>
+<h3>Correlation between variables</h3>
 
 ```{r, message=FALSE, warning=FALSE}
 ## clean the data
@@ -291,7 +297,8 @@ Countries in different continent may have different outcomes, which leading to t
 
 Given that there are few data about Africa and Oceania (1 data point in Oceania and 3 data point in Africa), so only three continents - Americas, Asia and Europe can be analyzed.
 
-**correlation between suicide rate and other variables in Asia**
+<br>
+<h3>Correlation between suicide rate and other variables in Asia</h3>
 
 ```{r,message=FALSE, warning=FALSE}
 Num.cols_asia <- sapply(asia_overall, is.numeric)
@@ -301,7 +308,8 @@ corrplot(Cor.data_asia, method = 'square', addCoef.col = "black", tl.col = "blac
 
 Suicide rate in Asia has a slightly positive correlation with degree of satisfaction with family, freedom, but has a slightly negtive correlation with trust of government and gdp per capita.
 
-**correlation between suicide rate and other variables in Europe**
+<br>
+<h3>Correlation between suicide rate and other variables in Europe</h3>
 
 ```{r}
 Num.cols_europe <- sapply(europe_overall, is.numeric)
@@ -311,7 +319,8 @@ corrplot(Cor.data_europe, method = 'square', addCoef.col = "black", tl.col = "bl
 
 Suicide rate in Europe has a negative correlation with gdp per capita, happiness score, degree of satisfaction with family, freedom, trust of government and generosity, which means that if a country in Europe is more prosperous and has a relatively higher happiness score, it is more likely to have a lower suicide rate.
 
-**correlation between suicide rate and other variables in Americas**
+<br>
+<h3>Correlation between suicide rate and other variables in Americas</h3>
 
 ```{r,message=FALSE, warning=FALSE}
 americas_overall = overall_data %>% 

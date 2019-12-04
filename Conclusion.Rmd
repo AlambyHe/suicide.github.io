@@ -5,7 +5,7 @@ output:
     toc_float: true
 ---
 
-# Conclusion
+<h3>Conclusion</h3>
 
 We found that suicide rate is associated with GDP, HDI, gender, age and location.
 
@@ -19,7 +19,8 @@ We also found that male are 3 times more likely to commit suicide than female. E
 
 However, the availability and quality of data on suicide is poor. Many large countries such as China and India don't have data on suicide. Further data collection and suicide incidence monitoring are the direction in the future.
 
-# Suicide Prevention
+<br>
+<h3>Suicide Prevention</h3>
 
 Suicides are preventable and effective interventions exist. First and foremost, early identification and treatment of depression and alcohol use disorders are key for the prevention of suicide at individual level, as well as follow-up contact with those who have attempted suicide and psychosocial support in communities. Equally important are effective interventions at population level aiming to reduce access to the means of suicide, to adopt responsible reporting of suicide by the media, and to introduce alcohol policies to reduce the harmful use of alcohol. From the health systems perspective, it is imperative for health-care services to incorporate suicide prevention as a core component.
 

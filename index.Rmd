@@ -3,17 +3,26 @@ title: "Why People Suicide"
 output: 
   html_document
 ---
+
+
+
 <p style="font-style:italic;">Junhui Mi, Tianhui He, Shenglin Liu, Xinru Wang, Yiyang Liu </p>
 <br>
-Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies. <br>Suicides are PREVENTABLE. Much can be done to prevent suicide at individual, community and national levels.
 
 <center>
-
-<img src="./image/do-not-give-up.jpg" width="600px" height="auto">
-
+![](https://www.czxiu.com/assets/z/2013leaf/10/Do%20Not%20Give%20Up.gif){width=1000px}
 </center>
 
-## Motivation
+<br>
+<ul>
+<li>Suicides and suicide attempts have a ripple effect that impacts on families, friends, colleagues, communities and societies. </li>
+<li>Suicides are PREVENTABLE. Much can be done to prevent suicide at individual, community and national levels.</li>
+</ul>
+
+
+
+<br>
+<h3>Motivation</h3>
 
 Suicide has been of increasing concern all over the world. Nowadays, close to 800,000 people die by suicide every year. Furthermore, for each suicide, there are more than 20 suicide attempts. Suicides are the leading causes of death among teenagers and young adults death.
 
@@ -21,7 +30,9 @@ Suicide has been of increasing concern all over the world. Nowadays, close to 80
 
 Our objective is to develop an online resource to plot and analyze global suiside rate and build models to explore the causes of suicide. The target audience for this webpage is all who is interesed in the causes of suicide and want to prevent himself/herself or people around from suicide. The goal of this resource is to raise awareness on the widespread impact of suicides, and inform public that suicides are preventable.
 
-## Methods
+<br>
+
+<h3>Methods</h3>
 
 Using Flexdashboard to create maps and plots of global suicide rate from 1979 to 2016, and separate analysis of suicide rate across years, gender and age.
 
@@ -29,7 +40,9 @@ Using regression models and correlation analysis to explore the association betw
 
 Using our analysis results and other website links to help people know more about suicides and prevent suicides.
 
-## Data
+<br>
+
+<h3>Data</h3>
 
 **WHO Suicide Statistics**
 <ul>
@@ -47,4 +60,12 @@ Using our analysis results and other website links to help people know more abou
 
 <li>Can be found [here](https://www.kaggle.com/unsdsn/world-happiness)</li>
 </ul>
-## Screencast
+
+<center>
+
+<img src="./image/do-not-give-up.jpg" width="600px" height="auto">
+
+</center>
+
+<br>
+<h3>Screencast</h3>
