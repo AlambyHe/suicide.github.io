@@ -19,8 +19,6 @@ output:
 <li>Suicides are PREVENTABLE. Much can be done to prevent suicide at individual, community and national levels.</li>
 </ul>
 
-
-
 <br>
 <h3>Motivation</h3>
 
