@@ -61,11 +61,5 @@ Using our analysis results and other website links to help people know more abou
 <li>Can be found [here](https://www.kaggle.com/unsdsn/world-happiness)</li>
 </ul>
 
-<center>
-
-<img src="./image/do-not-give-up.jpg" width="600px" height="auto">
-
-</center>
-
 <br>
 <h3>Screencast</h3>
