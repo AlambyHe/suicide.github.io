@@ -1,5 +1,5 @@
 ---
-title: "Project Report"
+title: <font color=SteelBlue>Project Report</font>
 output: 
   html_document:
     toc: true
@@ -9,20 +9,20 @@ output:
 
 <p style="font-style:italic;">December 3, 2019 </p>
 
-<h3>Motivation</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Motivation**</h3></font>
 
-<h5>Facts about suicide</h5>
+<font color=SteelBlue face="Helvetica"><h5>**Facts about suicide**</h5></font>
 
 Suicide has been of increasing concern all over the world. Nowadays, close to 800,000 people die by suicide every year. Furthermore, for each suicide, there are more than 20 suicide attempts. Suicides are the leading causes of death among teenagers and young adults death.
 
 ![](./image/top-three-causes.png)
 
-<h5>Objective</h5>
+<font color=SteelBlue face="Helvetica"><h5>**Objective**</h5></font>
 
 Our objective is to develop an online resource to plot and analyze global suiside rate, find out what kind of people have high risk of suicide, and build models to explore the causes of suicide. The target audience for this webpage is all who is interesed in the causes of suicide and want to prevent himself/herself or people around from suicide. The goal of this resource is to raise awareness on the widespread impact of suicides, and inform public that suicides are preventable.
 
 <br>
-<h3>Methods</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Methods**</h3></font>
 
 We use Flexdashboard to create maps and plots of global suicide rate from 1979 to 2016, and separate analysis of suicide rate across years, gender and age.
 
@@ -31,26 +31,26 @@ We use regression models and correlation analysis to explore the association bet
 We use our analysis results, a selftest for fun and other website links to help people know more about suicides and prevent suicides.
 
 <br>
-<h3>Data</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Data**</h3></font>
 
-**WHO Suicide Statistics**
+<font color=SteelBlue face="Helvetica"><h5>**WHO Suicide Statistics**</h5></font>
 <ul>
 <li>Basic historical (1979-2016) data by country, year and demographic groups.</li>
 
 <li>6 variables in total, focused on plotting and analyzing global suiside rate.</li>
 </ul>
 
-
-**World Happiness Report**
+<font color=SteelBlue face="Helvetica"><h5>**World Happiness Report**</h5></font>
 <ul>
 <li>Happiness scored from 2015 to 2017 according to economic production, social support, etc.</li>
 <li>12 variables in total, focused on model building to explore the causes of suicide.</li>
 </ul>
 
 <br>
-<h3>Findings</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Findings**</h3></font>
 
-<h5>Overall trend</h5>
+<font color=SteelBlue face="Helvetica"><h5>**Overall trend**</h5></font>
+
 According to the WHO suicide data from 1979 to 2016, suicide rate decreased as time went by, and 2/3 countries had a decreasing trend overvall. South Korea had the highest suicide growth rate, while Northern European countries such as Estonia and Latvija's suicide rate decreased the most. However, Europe still has the highest suicide ratio (suicide number/population) cumulatively. Lithusania has the highest suicide ration in the country level.
 
 <center>
@@ -62,7 +62,8 @@ According to the WHO suicide data from 1979 to 2016, suicide rate decreased as t
 
 
 <br>
-<h5>Impact of GDP and HDI</h5>
+<font color=SteelBlue face="Helvetica"><h5>**Impact of GDP and HDI**</h5></font>
+
 GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believed to have association with suicide rate. We found that in Europe, suicide rate decreased as GDP per capita and HDI increased; while in America, suicide rate increased as GDP per capita and HDI increased.
 
 <center>
@@ -79,7 +80,8 @@ GDP(Gross Domestic Product) and HDI(Human Development Index) are commenly believ
 
 
 <br>
-<h5>Other correlations of interest</h5>
+<font color=SteelBlue face="Helvetica"><h5>**Other correlations of interest**</h5></font>
+
 We also discovered other correlations in continent level. In Asia, suicide rate had positive correlations with degree of satisfaction with family and freedom; In Europe, suicide rate had negative correlations with gdp per capita and happiness score; In America, suicide rate had positive correlations with gdp per capita, happiness score, degree of satisfaction with family and life expectancy.
 
 <center>
@@ -126,12 +128,12 @@ However, the availability and quality of data on suicide is poor. Many large cou
 
 
 <br>
-<h3>Additional Analysis</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Additional Analysis**</h3></font>
 
 In order to alarm our audience to be aware of their potential mental illness which could potentially lead to suicide, we conducted a small selftest program to predict the “probability” of committing suicide. Our motivation is never to encourage self-harm of any kind, including suicide. The only incentive behind this questionnaire is to encourage people to step out of their comfort zone and directly face their potential mental illness. The questionnaire includes some risk factors we found in our model as well as some proven risk factors found in publications. The prediction result is categorized to five levels and will automatically show up after clicking the “submit” button. Instead of explicitly showing a number of “probability”, we used five GIFs to imply the “probability” of suicide. So that even though people who take our test used to or is suffering from severe mental illness, they will feel less stressful when seeing the test result. 
 
 
 <br>
-<h3>Implication</h3>
+<font color=SteelBlue face="Helvetica"><h3>**Implication**</h3></font>
 
 Suicides are preventable and effective interventions exist. First and foremost, early identification and treatment of depression and alcohol use disorders are key for the prevention of suicide at individual level, as well as follow-up contact with those who have attempted suicide and psychosocial support in communities. Equally important are effective interventions at population level aiming to reduce access to the means of suicide, to adopt responsible reporting of suicide by the media, and to introduce alcohol policies to reduce the harmful use of alcohol. From the health systems perspective, it is imperative for health-care services to incorporate suicide prevention as a core component.

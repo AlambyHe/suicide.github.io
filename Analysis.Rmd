@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: <font color=SteelBlue>Overview</font>
 output: 
   html_document:
     code_folding: hide
@@ -76,9 +76,7 @@ custom_theme = hc_theme(
   itemHoverStyle = list(color = 'gray'))
 ```
 
-
-## Why do we care about suicide?
-
+### <font color=SteelBlue face="Helvetica">**Why do we care about suicide?**</font>
 
 Last month, the suicide of South Korean singers _Sulli_ and _Goo Hara_ shocked the world. 
 
@@ -86,9 +84,7 @@ Last month, the suicide of South Korean singers _Sulli_ and _Goo Hara_ shocked t
 
 Beyond shock, we hope to find out what kind of people have high risk of suicide and why do people commit suicide.
 
-
-
-## Is suicide a worldwide public health problem?
+### <font color=SteelBlue face="Helvetica">**Is suicide a worldwide public health problem?**</font>
 
 
 *Key facts* [from WHO](https://www.who.int/en/news-room/fact-sheets/detail/suicide)
@@ -97,9 +93,7 @@ Beyond shock, we hope to find out what kind of people have high risk of suicide 
 * Suicide is the <span style="color:red;">third</span> leading cause of death in 15-19-year-olds.
 * <span style="color:red;">79%</span> of global suicides occur in low- and middle-income countries.
 
-
-## Who is at risk?
-
+### <font color=SteelBlue face="Helvetica">**Who is at risk?**</font>
 
 * People with mental disorders (in particular, depression and alcohol use disorders)
 * Many suicides also happen impulsively in moments of crisis with a breakdown in the ability to deal with life stresses, such as financial problems, relationship break-up or chronic pain and illness.
@@ -156,8 +150,7 @@ highchart() %>%
 
 ```
 
-### We should pay more attention to suicide.
-
+### <font color=SteelBlue face="Helvetica">**We should pay more attention to suicide.**</font>
 
 Globally, the availability and quality of data on suicide and suicide attempts is poor. Only 80 Member States have good-quality vital registration data that can be used directly to estimate suicide rates. The system must improve to monitor suicide incidence so that to prevent and control it.
 
