@@ -8,6 +8,7 @@ output:
 <font color=SteelBlue face="Helvetica"><h3>**Conclusion**</h3></font>
 <center>
 ![](./image/4.jpeg){width=600px}
+
 </center>
 
 We found that suicide rate is associated with GDP, HDI, gender, age and location.

@@ -34,7 +34,7 @@ library(mgcv)
 ```
 
 <center>
-![](./image/2.jpeg){width=600px}
+![](./image/2.JPG){width=600px}
 </center>
 <br>
 <font color=SteelBlue face="Helvetica"><h3>**Suicide rate chages with year**</h3></font>
