@@ -34,7 +34,7 @@ Our objective is to develop an online resource to plot and analyze global suisid
 
 Using Flexdashboard to create maps and plots of global suicide rate from 1979 to 2016, and separate analysis of suicide rate across year, gender and age.
 
-Using regression models and correlation analysis to explore the association between suicides and gdp, happiness and other covirates.
+Using regression models and correlation analysis to explore the association between suicides and gdp, happiness and other covariates.
 
 Using our analysis results and other website links to help people know more about suicides and prevent suicides.
 
@@ -60,9 +60,9 @@ Using our analysis results and other website links to help people know more abou
 
 <li>Can be found [here](https://www.kaggle.com/unsdsn/world-happiness)</li>
 </ul>
-
-
 <br>
+<font color=SteelBlue face="Helvetica"><h3>**Screencast**</h3></font>
+
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JPhAuJm1A1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QF204lWbQ_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
