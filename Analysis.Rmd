@@ -79,9 +79,12 @@ custom_theme = hc_theme(
 ### <font color=SteelBlue face="Helvetica">**Why do we care about suicide?**</font>
 
 Last month, the suicide of South Korean singers _Sulli_ and _Goo Hara_ shocked the world. 
+<br/>
 
-<img src = "image/sullihara.jpg" alt = "sullihara">
-
+<center>
+<img src = "image/sullihara.jpg" alt = "sullihara" width="700" height="400">
+</center>
+<br/>
 Beyond shock, we hope to find out what kind of people have high risk of suicide and why do people commit suicide.
 
 ### <font color=SteelBlue face="Helvetica">**Is suicide a worldwide public health problem?**</font>
