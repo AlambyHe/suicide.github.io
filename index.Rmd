@@ -1,5 +1,5 @@
 ---
-title: <font color=SteelBlue>Factors related to suicide</font>
+title: <font color=SteelBlue>Factors Related to Suicide Rate</font>
 output: 
   html_document
 ---
