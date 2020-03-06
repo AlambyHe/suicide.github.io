@@ -1,5 +1,5 @@
 ---
-title: <font color=SteelBlue>Why Do People Commit Suicide?</font>
+title: <font color=SteelBlue>Factors related to suicide</font>
 output: 
   html_document
 ---
@@ -10,7 +10,7 @@ output:
 
 
 <center>
-![](./image/1.jpeg){width=600px}
+![](https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2019/12/05/nz_suicide_051233.jpg?itok=TkM4ry70&timestamp=1575501541){width=600px}
 </center>
 <br>
 <ul>
